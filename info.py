@@ -31,12 +31,12 @@ INDEX_CAPTION = bool(environ.get('SAVE_CAPTION', True)) # Save caption db when i
 #Making it false will not save caption in db SO you can save some storage space
 
 
-PICS = (environ.get('PICS', 'https://deposit.pictures/p/caf0bf16536841cc8ee465274ae79774 https://deposit.pictures/p/bdac0e9e96d34de99fc389d8e5930a0a')).split()  # Sample pic
-NOR_IMG = environ.get("NOR_IMG", "https://deposit.pictures/p/979543e55f3945148fc9d4f0982a0e2f")
-MELCOW_PHOTO = environ.get("MELCOW_PHOTO", "https://deposit.pictures/p/caf0bf16536841cc8ee465274ae79774")
-SPELL_IMG = environ.get("SPELL_IMG", "https://graph.org/file/13702ae26fb05df52667c.jpg")
-SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://deposit.pictures/p/e5cd31629844405cacf30648f4454d4f'))
-FSUB_PICS = (environ.get('FSUB_PICS', 'https://deposit.pictures/p/7bcbad013dcd4d83a47dea01bb2df7e1')).split()  # Fsub pic
+PICS = (environ.get('PICS', 'https://i.postimg.cc/8C15CQ5y/1.png https://i.postimg.cc/gcNtrv0m/2.png https://i.postimg.cc/cHD71BBz/3.png https://i.postimg.cc/F1XYhY8q/4.png https://i.postimg.cc/1tNwGVxC/5.png https://i.postimg.cc/139dvs3c/7.png https://i.postimg.cc/zDF6KyJX/10.png https://i.postimg.cc/fyycVqzd/11.png https://i.postimg.cc/cC7txyhz/15.png https://i.postimg.cc/kX9tjGXP/16.png https://i.postimg.cc/y8pgYTh7/19.png')).split()  # Sample pic
+NOR_IMG = environ.get("NOR_IMG", "https://i.postimg.cc/26ZBtBZr/13.png https://i.postimg.cc/PJn8nrWZ/14.png")
+MELCOW_PHOTO = environ.get("MELCOW_PHOTO", "https://i.postimg.cc/1Xw1wxDw/photo-2025-10-19-07-30-34.jpg")
+SPELL_IMG = environ.get("SPELL_IMG", "https://i.postimg.cc/dtW30QpL/6.png")
+SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://i.postimg.cc/QtXVtB8K/8.png https://i.postimg.cc/y8j8G1XV/9.png'))
+FSUB_PICS = (environ.get('FSUB_PICS', 'https://i.postimg.cc/zXjH4NVb/17.png https://i.postimg.cc/sggGrLhn/18.png')).split()  # Fsub pic
 
 # ============================
 # Admin, Channels & Users Configuration
