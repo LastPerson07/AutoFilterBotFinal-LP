@@ -31,12 +31,12 @@ INDEX_CAPTION = bool(environ.get('SAVE_CAPTION', True)) # Save caption db when i
 #Making it false will not save caption in db SO you can save some storage space
 
 
-PICS = (environ.get('PICS', 'https://graph.org/file/56b5deb73f3b132e2bb73.jpg https://graph.org/file/5303692652d91d52180c2.jpg https://graph.org/file/425b6f46efc7c6d64105f.jpg https://graph.org/file/876867e761c6c7a29855b.jpg')).split()  # Sample pic
-NOR_IMG = environ.get("NOR_IMG", "https://graph.org/file/e20b5fdaf217252964202.jpg")
-MELCOW_PHOTO = environ.get("MELCOW_PHOTO", "https://graph.org/file/56b5deb73f3b132e2bb73.jpg")
+PICS = (environ.get('PICS', 'https://deposit.pictures/p/caf0bf16536841cc8ee465274ae79774 https://deposit.pictures/p/bdac0e9e96d34de99fc389d8e5930a0a')).split()  # Sample pic
+NOR_IMG = environ.get("NOR_IMG", "https://deposit.pictures/p/979543e55f3945148fc9d4f0982a0e2f")
+MELCOW_PHOTO = environ.get("MELCOW_PHOTO", "https://deposit.pictures/p/caf0bf16536841cc8ee465274ae79774")
 SPELL_IMG = environ.get("SPELL_IMG", "https://graph.org/file/13702ae26fb05df52667c.jpg")
-SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://graph.org/file/242b7f1b52743938d81f1.jpg'))
-FSUB_PICS = (environ.get('FSUB_PICS', 'https://graph.org/file/7478ff3eac37f4329c3d8.jpg https://graph.org/file/56b5deb73f3b132e2bb73.jpg')).split()  # Fsub pic
+SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://deposit.pictures/p/e5cd31629844405cacf30648f4454d4f'))
+FSUB_PICS = (environ.get('FSUB_PICS', 'https://deposit.pictures/p/7bcbad013dcd4d83a47dea01bb2df7e1')).split()  # Fsub pic
 
 # ============================
 # Admin, Channels & Users Configuration
@@ -48,26 +48,27 @@ LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1003144372708'))  # Log channel i
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-1003144372708'))  # Bin channel id (make sure bot is admin)
 PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1003144372708'))  # Premium logs channel id
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '-100').split()] #(make sure bot is admin)
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1001766353581')  # Support group id (make sure bot is admin)
-reqst_channel = environ.get('REQST_CHANNEL_ID', '-1001557378145')  # Request channel id (make sure bot is admin)
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/Netflix_Series_groups')  # Support group link (make sure bot is admin)
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1003161543370')  # Support group id (make sure bot is admin)
+reqst_channel = environ.get('REQST_CHANNEL_ID', '-1001557378145 -1003161543370')  # Request channel id (make sure bot is admin)
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/NetFlixian_Support')  # Support group link (make sure bot is admin)
 
 # FORCE_SUB 
-auth_req_channels = environ.get("AUTH_REQ_CHANNELS", "-1001557378145")# requst to join Channel for force sub (make sure bot is admin) only for bot ADMINS  
-auth_channels     = environ.get("AUTH_CHANNELS", "-1001557378145")# Channels for force sub (make sure bot is admin)
+auth_req_channels = environ.get("AUTH_REQ_CHANNELS", "-1001557378145 -1003161543370")# requst to join Channel for force sub (make sure bot is admin) only for bot ADMINS  
+auth_channels     = environ.get("AUTH_CHANNELS", "-1001557378145 -1003161543370")# Channels for force sub (make sure bot is admin)
 
 # ============================
 # Payment Configuration
 # ============================
-QR_CODE = environ.get('QR_CODE', 'https://graph.org/file/242b7f1b52743938d81f1.jpg')    # QR code image for payments
-OWNER_UPI_ID = environ.get('OWNER_UPI_ID', 'Every Thing is Free here')    # Owner UPI ID for payments
+QR_CODE = environ.get('QR_CODE', 'https://deposit.pictures/p/d77cbe36fce44687b13491e10bbdb07b')    # QR code image for payments
+OWNER_UPI_ID = environ.get('OWNER_UPI_ID', 'Everything here is completely free.')    # Owner UPI ID for payments
 
 STAR_PREMIUM_PLANS = {
-    10: "7day",
-    20: "15day",    
-    40: "1month", 
-    55: "45day",
-    75: "60day",
+ 10: "One week of pure drama",
+ 20: "Two weeks of accidental genius",
+ 40: "A full month of questionable decisions",
+ 55: "45 days of epic laziness",
+ 75: "60 days and still no idea what's happening",
+
 }  # Premium plans with their respective durations in days
 
 # ============================
@@ -98,7 +99,7 @@ LANDSCAPE_POSTER = bool(environ.get('LANDSCAPE_POSTER', True)) # Shows landscape
 IS_VERIFY = is_enabled('IS_VERIFY', False)  # Verification On (True) / Off (False)
 LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-100')) #Verification Channel Id 
 LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-100')) #If Anyone Set Your Bot In Any Group And Set Shortner In That Group Then In This Channel The All Details Come
-VERIFY_IMG = environ.get("VERIFY_IMG", "https://telegra.ph/file/9ecc5d6e4df5b83424896.jpg")
+VERIFY_IMG = environ.get("VERIFY_IMG", "https://deposit.pictures/p/7bcbad013dcd4d83a47dea01bb2df7e1")
 
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/Netflixian_Movie")   # Tutorial link for verification
 TUTORIAL_2 = environ.get("TUTORIAL_2", "https://t.me/Netflixian_Movie")   # Second tutorial link for verification
