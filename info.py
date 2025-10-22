@@ -59,7 +59,7 @@ auth_channels     = environ.get("AUTH_CHANNELS", "-1001557378145 -1003161543370"
 # ============================
 # Payment Configuration
 # ============================
-QR_CODE = environ.get('QR_CODE', 'https://deposit.pictures/p/d77cbe36fce44687b13491e10bbdb07b')    # QR code image for payments
+QR_CODE = environ.get('QR_CODE', 'https://i.postimg.cc/1Xw1wxDw/photo-2025-10-19-07-30-34.jpg')    # QR code image for payments
 OWNER_UPI_ID = environ.get('OWNER_UPI_ID', 'Everything here is completely free.')    # Owner UPI ID for payments
 
 STAR_PREMIUM_PLANS = {
@@ -138,7 +138,7 @@ PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in envir
 ULTRA_FAST_MODE = is_enabled(environ.get('ULTRA_FAST_MODE', "False"), True) # Set to True for fast search, False for original search
 
 MAX_B_TN = environ.get("MAX_B_TN", "5") # Maximum number of buttons in a row (default: 5)
-PORT = int(environ.get("PORT", "10000"))  # Port for the web server (default: 8080)
+PORT = int(environ.get("PORT", "8080"))  # Port for the web server (default: 8080)
 MSG_ALRT = environ.get('MSG_ALRT', 'Share & Support Us ♥️') # Alert message for users
 DELETE_TIME = int(environ.get("DELETE_TIME", "300"))  #  deletion time in seconds (default: 5 minutes). Adjust as per your needs.
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", f"{script.CAPTION}")   # Custom caption for files
@@ -204,7 +204,7 @@ BAD_WORDS = {
 # Server & Web Configuration
 # ============================
 
-NO_PORT = bool(environ.get('NO_PORT', False))
+NO_PORT = bool(environ.get('NO_PORT', True))
 APP_NAME = None
 if 'DYNO' in environ:
     ON_HEROKU = True
@@ -215,7 +215,7 @@ BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
 FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
 URL = "https://{}/".format(FQDN) if ON_HEROKU or NO_PORT else "https://{}/".format(FQDN, PORT)
 SLEEP_THRESHOLD = int(environ.get('SLEEP_THRESHOLD', '60'))
-WORKERS = int(environ.get('WORKERS', '4'))
+WORKERS = int(environ.get('WORKERS', '10'))
 SESSION_NAME = str(environ.get('SESSION_NAME', 'THE UPDATED GUYS 😎'))
 MULTI_CLIENT = False
 name = str(environ.get('name', 'Ⓜ️ark'))
