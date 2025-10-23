@@ -1,7 +1,7 @@
 from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
-from info import ADMINS,MULTIPLE_DB, LOG_CHANNEL, OWNER_LNK, MELCOW_VID
+from info import ADMINS,MULTIPLE_DB, LOG_CHANNEL, OWNER_LNK, MELCOW_PHOTO
 from database.users_chats_db import db, db2
 from database.ia_filterdb import Media, Media2, db as db_stats, db2 as db2_stats
 from utils import get_size, temp, get_settings, get_readable_time
@@ -57,15 +57,15 @@ async def save_group(bot, message):
                     except:
                         pass
                 try:
-                    temp.MELCOW['welcome'] = await message.reply_VID(
-                        VID=MELCOW_VID,
+                    temp.MELCOW['welcome'] = await message.reply_ photo(
+                         photo=MELCOW_PHOTO,
                         caption=script.MELCOW_ENG.format(u.mention, message.chat.title),
                         reply_markup=InlineKeyboardMarkup([
                                 [
                                     InlineKeyboardButton("📌 ᴄᴏɴᴛᴀᴄᴛ ꜱᴜᴘᴘᴏʀᴛ 📌", url=OWNER_LNK)
                                 ]]),parse_mode=enums.ParseMode.HTML)
                 except Exception as e:
-                    print(f"Welcome video send failed: {e}")
+                    print(f"Welcome  photo send failed: {e}")
         if settings.get("auto_delete"):
             await asyncio.sleep(600)
             try:
