@@ -1593,79 +1593,68 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
 
     elif query.data == "premium_info":
-        try:
-            btn = [[
-                InlineKeyboardButton('• ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ •', callback_data='buy_info'),
-            ],[
-                InlineKeyboardButton('• ʀᴇꜰᴇʀ ꜰʀɪᴇɴᴅꜱ', callback_data='reffff'),
-                InlineKeyboardButton('ꜰʀᴇᴇ ᴛʀɪᴀʟ •', callback_data='give_trial')
-            ],[
-                InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
-            ]]
-            reply_markup = InlineKeyboardMarkup(btn)
-            await client.edit_message_media(
-                chat_id=query.message.chat.id,
-                message_id=query.message.id,
-                media=InputMediaPhoto(media=SUBSCRIPTION, caption=script.BPREMIUM_TXT, parse_mode=enums.ParseMode.HTML),
-                reply_markup=reply_markup
-            )
-        except Exception as e:
-            logging.exception("Exception in 'premium_info' callback")
+    try:
+        # await client.edit_message_media(
+        #     chat_id=query.message.chat.id,
+        #     message_id=query.message.id,
+        #     media=InputMediaPhoto(media=SUBSCRIPTION, caption=script.BPREMIUM_TXT, parse_mode=enums.ParseMode.HTML),
+        #     reply_markup=reply_markup
+        # )
+    except Exception as e:
+        logging.exception("Exception in 'premium_info' callback")
 
+elif query.data == "buy_info":
+    try:
+        btn = [[
+            InlineKeyboardButton('ꜱᴛᴀʀ', callback_data='star_info'),
+            InlineKeyboardButton('ᴜᴘɪ', callback_data='upi_info')
+        ],[
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ᴘʀᴇᴍɪᴜᴍ ⇋', callback_data='premium_info')
+        ]]
+        reply_markup = InlineKeyboardMarkup(btn)
+        # await client.edit_message_media(
+        #     chat_id=query.message.chat.id,
+        #     message_id=query.message.id,
+        #     media=InputMediaPhoto(media=SUBSCRIPTION, caption=script.PREMIUM_TEXT, parse_mode=enums.ParseMode.HTML),
+        #     reply_markup=reply_markup
+        # )
+    except Exception as e:
+        logging.exception("Exception in 'buy_info' callback")
 
-    elif query.data == "buy_info":
-        try:
-            btn = [[
-                InlineKeyboardButton('ꜱᴛᴀʀ', callback_data='star_info'),
-                InlineKeyboardButton('ᴜᴘɪ', callback_data='upi_info')
-            ],[
-                InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ᴘʀᴇᴍɪᴜᴍ ⇋', callback_data='premium_info')
-            ]]
-            reply_markup = InlineKeyboardMarkup(btn)
-            await client.edit_message_media(
-                chat_id=query.message.chat.id,
-                message_id=query.message.id,
-                media=InputMediaPhoto(media=SUBSCRIPTION, caption=script.PREMIUM_TEXT, parse_mode=enums.ParseMode.HTML),
-                reply_markup=reply_markup
-            )
-        except Exception as e:
-            logging.exception("Exception in 'buy_info' callback")
+elif query.data == "upi_info":
+    try:
+        btn = [[
+            InlineKeyboardButton('• ꜱᴇɴᴅ  ᴘᴀʏᴍᴇɴᴛ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ •', url=OWNER_LNK),
+        ],[
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='buy_info')
+        ]]
+        reply_markup = InlineKeyboardMarkup(btn)
+        # await client.edit_message_media(
+        #     chat_id=query.message.chat.id,
+        #     message_id=query.message.id,
+        #     media=InputMediaPhoto(media=SUBSCRIPTION, caption=script.PREMIUM_UPI_TEXT.format(OWNER_UPI_ID), parse_mode=enums.ParseMode.HTML),
+        #     reply_markup=reply_markup
+        # )
+    except Exception as e:
+        logging.exception("Exception in 'upi_info' callback")
 
-    elif query.data == "upi_info":
-        try:
-            btn = [[
-                InlineKeyboardButton('• ꜱᴇɴᴅ  ᴘᴀʏᴍᴇɴᴛ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ •', url=OWNER_LNK),
-            ],[
-                InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='buy_info')
-            ]]
-            reply_markup = InlineKeyboardMarkup(btn)
-            await client.edit_message_media(
-                chat_id=query.message.chat.id,
-                message_id=query.message.id,
-                media=InputMediaPhoto(media=SUBSCRIPTION, caption=script.PREMIUM_UPI_TEXT.format(OWNER_UPI_ID), parse_mode=enums.ParseMode.HTML),
-                reply_markup=reply_markup
-            )
-        except Exception as e:
-            logging.exception("Exception in 'upi_info' callback")
-
-    elif query.data == "star_info":
-        try:
-            btn = [
-                InlineKeyboardButton(f"{stars}⭐", callback_data=f"buy_{stars}")
-                for stars, days in STAR_PREMIUM_PLANS.items()
-            ]
-            buttons = [btn[i:i + 2] for i in range(0, len(btn), 2)]
-            buttons.append([InlineKeyboardButton("⋞ ʙᴀᴄᴋ", callback_data="buy_info")])
-            reply_markup = InlineKeyboardMarkup(buttons)
-            await client.edit_message_media(
-                chat_id=query.message.chat.id,
-                message_id=query.message.id,
-                media=InputMediaPhoto(media=SUBSCRIPTION, caption=script.PREMIUM_STAR_TEXT, parse_mode=enums.ParseMode.HTML),
-                reply_markup=reply_markup
-            )
-        except Exception as e:
-            logging.exception("Exception in 'star' callback")
-
+elif query.data == "star_info":
+    try:
+        btn = [
+            InlineKeyboardButton(f"{stars}⭐", callback_data=f"buy_{stars}")
+            for stars, days in STAR_PREMIUM_PLANS.items()
+        ]
+        buttons = [btn[i:i + 2] for i in range(0, len(btn), 2)]
+        buttons.append([InlineKeyboardButton("⋞ ʙᴀᴄᴋ", callback_data="buy_info")])
+        reply_markup = InlineKeyboardMarkup(buttons)
+        # await client.edit_message_media(
+        #     chat_id=query.message.chat.id,
+        #     message_id=query.message.id,
+        #     media=InputMediaPhoto(media=SUBSCRIPTION, caption=script.PREMIUM_STAR_TEXT, parse_mode=enums.ParseMode.HTML),
+        #     reply_markup=reply_markup
+        # )
+    except Exception as e:
+        logging.exception("Exception in 'star' callback")
 
     elif query.data.startswith("grp_pm"):
         _, grp_id = query.data.split("#")
