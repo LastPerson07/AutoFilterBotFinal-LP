@@ -57,15 +57,15 @@ async def save_group(bot, message):
                     except:
                         pass
                 try:
-                    temp.MELCOW['welcome'] = await message.reply_photo(
-                        photo=MELCOW_PHOTO,
+                    temp.MELCOW['welcome'] = await message.reply_VID(
+                        VID=MELCOW_VID,
                         caption=script.MELCOW_ENG.format(u.mention, message.chat.title),
                         reply_markup=InlineKeyboardMarkup([
                                 [
                                     InlineKeyboardButton("📌 ᴄᴏɴᴛᴀᴄᴛ ꜱᴜᴘᴘᴏʀᴛ 📌", url=OWNER_LNK)
                                 ]]),parse_mode=enums.ParseMode.HTML)
                 except Exception as e:
-                    print(f"Welcome photo send failed: {e}")
+                    print(f"Welcome video send failed: {e}")
         if settings.get("auto_delete"):
             await asyncio.sleep(600)
             try:
