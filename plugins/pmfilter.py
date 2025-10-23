@@ -1592,7 +1592,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 parse_mode=enums.ParseMode.HTML
             )
 
- elif query.data == "premium_info":
+    elif query.data == "premium_info":
         try:
             btn = [[
                 InlineKeyboardButton('• ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ •', callback_data='buy_info'),
@@ -1665,6 +1665,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
         except Exception as e:
             logging.exception("Exception in 'star' callback")
+
 
     elif query.data.startswith("grp_pm"):
         _, grp_id = query.data.split("#")
