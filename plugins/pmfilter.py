@@ -1600,6 +1600,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         #     media=InputMediaPhoto(media=SUBSCRIPTION, caption=script.BPREMIUM_TXT, parse_mode=enums.ParseMode.HTML),
         #     reply_markup=reply_markup
         # )
+        pass
     except Exception as e:
         logging.exception("Exception in 'premium_info' callback")
 
@@ -1618,6 +1619,7 @@ elif query.data == "buy_info":
         #     media=InputMediaPhoto(media=SUBSCRIPTION, caption=script.PREMIUM_TEXT, parse_mode=enums.ParseMode.HTML),
         #     reply_markup=reply_markup
         # )
+        pass
     except Exception as e:
         logging.exception("Exception in 'buy_info' callback")
 
@@ -1635,6 +1637,7 @@ elif query.data == "upi_info":
         #     media=InputMediaPhoto(media=SUBSCRIPTION, caption=script.PREMIUM_UPI_TEXT.format(OWNER_UPI_ID), parse_mode=enums.ParseMode.HTML),
         #     reply_markup=reply_markup
         # )
+        pass
     except Exception as e:
         logging.exception("Exception in 'upi_info' callback")
 
@@ -1653,6 +1656,7 @@ elif query.data == "star_info":
         #     media=InputMediaPhoto(media=SUBSCRIPTION, caption=script.PREMIUM_STAR_TEXT, parse_mode=enums.ParseMode.HTML),
         #     reply_markup=reply_markup
         # )
+        pass
     except Exception as e:
         logging.exception("Exception in 'star' callback")
 
